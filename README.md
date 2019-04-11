@@ -1,5 +1,5 @@
 # compiler
-มีตัวแปร ทำ + - * / % ในวงเล็บได้
+มีตัวแปร ทำ + - * / % ในวงเล็บได้ print string ได้
 เหลือ array if-else และ loop
 
 bison -d b.y
