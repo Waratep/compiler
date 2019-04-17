@@ -1,0 +1,9 @@
+// test.oke
+
+i = 19;
+j = 20;
+print i;
+print " + ";
+print j;
+print " = ";
+print i+j;
