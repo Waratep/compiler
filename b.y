@@ -23,17 +23,18 @@ void updateSymbolVal(char symbol, int val);
 %%
 
 
-line: assignment ';'		{}
-    | exit_command ';'		{exit(EXIT_SUCCESS); }
-    | println exp  ';'      {printf("%lld\n", $2);}
-    | print exp ';'			{printf("%lld", $2);}
-    | print string ';'      {printf("%s",(char * )($2));}
-    | line print string ';' {printf("%s",(char * )($3));}
-    | println string ';'    {printf("%s\n",(char * )($2));}
-    | line assignment ';'	{}
-    | line print exp ';'	{printf("%lld", $3);}
-    | line println exp  ';' {printf("%lld\n", $3);}
-    | line exit_command ';'	{exit(0);}
+line: assignment ';'		  {}
+    | exit_command ';'		  {exit(EXIT_SUCCESS); }
+    | println exp  ';'        {printf("%lld\n", $2);}
+    | print exp ';'			  {printf("%lld", $2);}
+    | print string ';'        {printf("%s",(char * )($2));}
+    | line print string ';'   {printf("%s",(char * )($3));}
+    | line println string ';' {printf("%s\n",(char * )($3));}
+    | println string ';'      {printf("%s\n",(char * )($2));}
+    | line assignment ';'	  {}
+    | line print exp ';'	  {printf("%lld", $3);}
+    | line println exp  ';'   {printf("%lld\n", $3);}
+    | line exit_command ';'	  {exit(0);}
     ;
 
 assignment: identifier '=' exp  { updateSymbolVal($1,$3); }
@@ -52,7 +53,7 @@ exp: term                  {$$ = $1;}
     }
     }	
 
-	| exp '%' exp          {$$ = $1 % $3;}
+	| exp '%' exp           {$$ = $1 % $3;}
 	| '-' exp 				{$$ = - $2; }
     | '(' exp ')'			{$$ = $2;}
     ;
