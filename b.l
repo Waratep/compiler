@@ -24,7 +24,7 @@ void comment(int i);
 "print"			       {return print;}
 "println"			   {return println;}
 "bye"				   {return exit_command;}
-{L}({L}|{D})*		   {yylval.id = yytext[0]; return identifier; }
+{L}({L}|{D})*		   {yylval.id = strdup(yytext); return identifier; }
 [0-9]+                 {yylval.num = atoi(yytext); return number;}
 [ \t\n]                {};
 [-+*/=;()%]            {return yytext[0];}

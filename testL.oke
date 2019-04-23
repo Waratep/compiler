@@ -1,7 +1,8 @@
 // test.oke
 
-print "test1  ";
-println "test2";
-
-println "Hello World!";
+is = 1;
+js = 5;
+ks = 8;
+ls = 2;
+mm = 4;
 
