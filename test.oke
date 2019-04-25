@@ -1,0 +1,22 @@
+	
+aa = 1d;
+b = 4d;
+c = 2d;
+
+makgua(aa,b){
+	makgua(aa,c){
+		sadangS "aa is Max\n";
+	}
+}
+
+makgua(b,aa){
+	makgua(b,c){
+		sadangS "b is Max\n";
+	}
+}
+
+makgua(c,aa){
+	makgua(c,b){
+		sadangS "c is Max\n";
+	}
+}
